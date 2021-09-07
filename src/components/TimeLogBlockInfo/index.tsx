@@ -1,10 +1,16 @@
-import moment from 'moment';
 import React, { FC } from 'react';
+// Components
 import { Text, View, ViewStyle } from 'react-native';
+
+// Libs && Utills
+import moment from 'moment';
 import { formatSeconds } from '../../helpers/time';
-import { spacingHelpers } from '../../styles';
+
+// Types
 import { TimeLog } from '../../types/types';
 
+// Assets && styles
+import { spacingHelpers } from '../../styles';
 import styles from './styles';
 
 interface TimeLogBlockInfoProps {

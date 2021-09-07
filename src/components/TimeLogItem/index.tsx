@@ -1,6 +1,9 @@
 import React from 'react';
+// Components
 import { Text, ViewStyle, TouchableOpacity } from 'react-native';
 import Swipeable from 'react-native-swipeable';
+
+// Styles
 import { COLORS, positionHelpers } from '../../styles';
 import styles from './styles';
 
@@ -22,8 +25,7 @@ const TimeLogItem: React.FC<Props> = ({
     <TouchableOpacity
       style={[styles.buttonContainer, { backgroundColor: COLORS.LIGHT_RED }]}
       onPress={() => onDeletePress && onDeletePress()}>
-      {/* <EvilIcons name="trash" size={40} color="#EE4B2B" /> */}
-      <Text style={{ fontSize: 12, color: '#EE4B2B' }}>Delete</Text>
+      <Text style={styles.deleteText}>Delete</Text>
     </TouchableOpacity>,
   ];
 

@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+// Components
 import { FlatList, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useDispatch } from 'react-redux';
 import TimeLogItem from '../../components/TimeLogItem';
+import DetailsModal from './DetailsModal';
+
+// Redux
+import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../store';
 import { deleteTimeLogByIndex } from '../../store/timeLogs';
-import DetailsModal from './DetailsModal';
+
+// Styles
 import styles from './styles';
 
 const LogsArchiveScreen = () => {

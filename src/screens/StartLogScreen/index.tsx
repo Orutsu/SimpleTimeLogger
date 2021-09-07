@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+// Components
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import StyledInput from '../../components/StyledInput';
-import PlayButton from '../../assets/images/play-button.png';
-import StopButton from '../../assets/images/stop-button.png';
-import { positionHelpers, spacingHelpers } from '../../styles';
-import styles from './styles';
+import { TimeLogBlockInfo } from '../../components/TimeLogBlockInfo';
+
+// Libs & Utils
+import moment from 'moment';
+import { useFocusEffect } from '@react-navigation/native';
+
+// Redux
 import { useDispatch } from 'react-redux';
 import {
   addTimeLog,
@@ -13,10 +17,15 @@ import {
   setCurrentTimeLog,
 } from '../../store/timeLogs';
 import { useTypedSelector } from '../../store';
-import moment from 'moment';
-import { useFocusEffect } from '@react-navigation/native';
-import { TimeLogBlockInfo } from '../../components/TimeLogBlockInfo';
+
+// Types
 import { TimeLog } from '../../types/types';
+
+// Assets && Styles
+import PlayButton from '../../assets/images/play-button.png';
+import StopButton from '../../assets/images/stop-button.png';
+import { positionHelpers, spacingHelpers } from '../../styles';
+import styles from './styles';
 
 const StartLogScreen = () => {
   const dispatch = useDispatch();
@@ -32,7 +41,6 @@ const StartLogScreen = () => {
     let interval: NodeJS.Timeout;
     if (currentTimeLog) {
       interval = setInterval(() => {
-        // if (activeTimesheetDuration < 0) {
         setActiveDuration(
           moment(new Date()).diff(currentTimeLog.startTime, 'second'),
         );
@@ -49,6 +57,7 @@ const StartLogScreen = () => {
         name: logName,
         description: logDescription,
         startTime: new Date(),
+        notes: [],
       }),
     );
     setLogDescription('');

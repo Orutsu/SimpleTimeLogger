@@ -4,3 +4,4 @@ export const GREEN = '#347a5b';
 export const GREY = 'grey';
 export const LIGHT_RED = '#ffcccb';
 export const LIGHT_BLUE = '#ADD8E6';
+export const RED = '#EE4B2B';

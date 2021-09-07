@@ -10,7 +10,6 @@ import navigationService from '../navigationService';
 // Types
 import { SvgProps } from 'react-native-svg';
 import { AllRoutes, RootRoutes } from '../routes';
-import styles from './styles';
 
 // Styles && Assets
 import { COLORS, positionHelpers } from '../../styles';
@@ -18,6 +17,7 @@ import Archive from '../../assets/images/TabBarIcons/archive.svg';
 import ArchiveFill from '../../assets/images/TabBarIcons/archive-fill.svg';
 import PlayCircle from '../../assets/images/TabBarIcons/play-circle.svg';
 import PlayCircleFill from '../../assets/images/TabBarIcons/play-circle-fill.svg';
+import styles from './styles';
 
 type TabBarItem = {
   icon: ReactElement<SvgProps> | null;

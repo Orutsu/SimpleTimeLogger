@@ -1,35 +1,21 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 // Compoments
-import {
-  View,
-  Image,
-  Text,
-  Alert,
-  TouchableOpacity,
-  Modal,
-  ViewStyle,
-  FlatList,
-} from 'react-native';
+import { View, Text, TouchableOpacity, Modal, FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-// Types
-import { TimeLog } from '../../types/types';
-
-// Helpers
-import { COLORS, positionHelpers, spacingHelpers } from '../../styles';
-
-// Assets && Styles
-import ArrowIcon from '../../assets/images/icons/arrow-left.svg';
-import styles from './styles';
 import { TimeLogBlockInfo } from '../../components/TimeLogBlockInfo';
 import StyledInput from '../../components/StyledInput';
+
+// Redux
 import { useDispatch } from 'react-redux';
 import { addCommentToTimeLog } from '../../store/timeLogs';
 import { useTypedSelector } from '../../store';
 
+// Assets && Styles
+import ArrowIcon from '../../assets/images/icons/arrow-left.svg';
+import { COLORS, positionHelpers, spacingHelpers } from '../../styles';
+import styles from './styles';
+
 interface Props {
-  // style?: ViewStyle | ViewStyle[];
   isVisible: boolean;
   onCancel: () => void;
   timeLogIndex: number;

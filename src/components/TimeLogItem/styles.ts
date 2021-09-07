@@ -17,6 +17,10 @@ export default StyleSheet.create({
     shadowRadius: 2.22,
     elevation: 3,
   },
+  deleteText: {
+    fontSize: 12,
+    color: COLORS.RED,
+  },
   optionsText: {
     fontSize: 17,
     marginTop: 4,
