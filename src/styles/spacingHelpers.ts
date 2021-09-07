@@ -18,6 +18,13 @@ export const pH20: ViewStyle = {
 // Margin Horizontal
 
 // Margin Top
+export const mT10: ViewStyle = {
+  marginTop: 10,
+};
+
+export const mT20: ViewStyle = {
+  marginTop: 20,
+};
 
 // Margin Left
 

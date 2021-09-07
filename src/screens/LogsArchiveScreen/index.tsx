@@ -1,11 +1,22 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useTypedSelector } from '../../store';
+import styles from './styles';
 
-const LogsArchiveScreen = () => (
-  <SafeAreaView>
-    <Text>sadad</Text>
-  </SafeAreaView>
-);
+const LogsArchiveScreen = () => {
+  const timeLogs = useTypedSelector((store) => store.timeLogs.timeLogs);
+
+  return (
+    <SafeAreaView style={styles.safeAreaViewContainer}>
+      <View style={[styles.pageContainer]}>
+        <FlatList
+          data={timeLogs}
+          renderItem={({ item }) => <Text>{item.name}</Text>}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 export default LogsArchiveScreen;
