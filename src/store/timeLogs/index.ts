@@ -5,6 +5,7 @@ export const {
   setCurrentTimeLog,
   setTimeLogsError,
   addTimeLog,
+  deleteTimeLogByIndex,
   clearCurrentTimeLog,
   addCommentToTimeLog,
 } = TimeLogsSlice.actions;

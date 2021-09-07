@@ -16,7 +16,7 @@ const initialState: TimesheetsState = {
 };
 
 const TimeLogsSlice = createSlice({
-  name: 'TimeLogsSlice',
+  name: 'TimeLogs',
   initialState,
   reducers: {
     setIsLoading(state, action: PayloadAction<boolean>) {
@@ -33,6 +33,14 @@ const TimeLogsSlice = createSlice({
     },
     clearCurrentTimeLog(state) {
       state.currentTimeLog = null;
+      return state;
+    },
+    deleteTimeLogByIndex(state, action: PayloadAction<number>) {
+      state.timeLogs = [
+        ...state.timeLogs.slice(0, action.payload),
+        ...state.timeLogs.slice(action.payload + 1),
+      ];
+      return state;
     },
     addTimeLog(state, action: PayloadAction<TimeLog>) {
       state.timeLogs = [action.payload, ...state.timeLogs];

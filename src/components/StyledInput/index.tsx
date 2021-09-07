@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+// Components
 import {
   Text,
   TextInput,
@@ -8,6 +9,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
+// Styles
 import styles from './styles';
 
 interface StyledInputProps extends TextInputProps {

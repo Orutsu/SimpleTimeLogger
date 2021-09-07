@@ -17,7 +17,6 @@ const TimeLogItem: React.FC<Props> = ({
   name,
   onItemPress,
   onDeletePress,
-  onEditPress,
 }) => {
   const rightButtons = [
     <TouchableOpacity
@@ -25,14 +24,6 @@ const TimeLogItem: React.FC<Props> = ({
       onPress={() => onDeletePress && onDeletePress()}>
       {/* <EvilIcons name="trash" size={40} color="#EE4B2B" /> */}
       <Text style={{ fontSize: 12, color: '#EE4B2B' }}>Delete</Text>
-    </TouchableOpacity>,
-    <TouchableOpacity
-      style={[styles.buttonContainer, { backgroundColor: COLORS.LIGHT_BLUE }]}
-      onPress={() => onEditPress && onEditPress()}>
-      {/* <EvilIcons name="pencil" size={40} color="#0047AB" /> */}
-      <Text style={{ fontSize: 12, marginLeft: -2, color: '#0047AB' }}>
-        Edit
-      </Text>
     </TouchableOpacity>,
   ];
 
