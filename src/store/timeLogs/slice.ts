@@ -35,7 +35,17 @@ const TimeLogsSlice = createSlice({
       state.currentTimeLog = null;
     },
     addTimeLog(state, action: PayloadAction<TimeLog>) {
-      state.timeLogs = [...state.timeLogs, action.payload];
+      state.timeLogs = [action.payload, ...state.timeLogs];
+      return state;
+    },
+    addCommentToTimeLog(
+      state,
+      action: PayloadAction<{ newNote: string; timeLogIndex: number }>,
+    ) {
+      state.timeLogs[action.payload.timeLogIndex].notes = [
+        action.payload.newNote,
+        ...state.timeLogs[action.payload.timeLogIndex].notes,
+      ];
       return state;
     },
   },

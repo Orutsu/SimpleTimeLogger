@@ -26,7 +26,7 @@ const StartLogScreen = () => {
   const [logName, setLogName] = useState('');
   const [logDescription, setLogDescription] = useState('');
 
-  const [activeDuration, setActiveDuration] = useState(-1);
+  const [activeDuration, setActiveDuration] = useState(0);
 
   useFocusEffect(() => {
     let interval: NodeJS.Timeout;
@@ -63,6 +63,7 @@ const StartLogScreen = () => {
         duration: moment(new Date()).diff(currentTimeLog.startTime, 'second'),
         startTime: currentTimeLog.startTime,
         endTime: new Date(),
+        notes: [],
       };
       dispatch(addTimeLog(newTimeLog));
       dispatch(clearCurrentTimeLog());

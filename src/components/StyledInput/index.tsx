@@ -11,7 +11,7 @@ import {
 import styles from './styles';
 
 interface StyledInputProps extends TextInputProps {
-  label: string;
+  label?: string;
   style?: ViewStyle | ViewStyle[];
   inputStyle?: TextStyle | TextStyle[];
 }

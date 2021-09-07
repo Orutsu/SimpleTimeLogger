@@ -9,4 +9,22 @@ export default StyleSheet.create({
   pageContainer: {
     flex: 1,
   },
+  icon: {
+    width: 50,
+    height: 50,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: COLORS.BLACK,
+  },
+  label: {
+    fontSize: 18,
+    color: COLORS.BLACK,
+  },
+  note: {
+    fontSize: 18,
+    color: COLORS.BLACK,
+  },
 });

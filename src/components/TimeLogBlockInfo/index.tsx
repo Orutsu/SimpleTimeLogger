@@ -9,7 +9,7 @@ import styles from './styles';
 
 interface TimeLogBlockInfoProps {
   style?: ViewStyle | ViewStyle[];
-  timeLog: TimeLog;
+  timeLog?: TimeLog;
   duration: number;
 }
 
@@ -36,6 +36,14 @@ export const TimeLogBlockInfo: FC<TimeLogBlockInfoProps> = ({
           {moment(timeLog?.startTime).format('YYYY-MM-DD HH:mm:ss')}
         </Text>
       </View>
+      {timeLog?.endTime && (
+        <View style={spacingHelpers.mT10}>
+          <Text style={styles.label}>End time:</Text>
+          <Text style={styles.valueText}>
+            {moment(timeLog?.endTime).format('YYYY-MM-DD HH:mm:ss')}
+          </Text>
+        </View>
+      )}
       <View style={spacingHelpers.mT10}>
         <Text style={styles.label}>Duration:</Text>
         <Text style={styles.valueText}>

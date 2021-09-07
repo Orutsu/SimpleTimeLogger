@@ -4,4 +4,5 @@ export type TimeLog = {
   startTime: Date;
   endTime?: Date;
   duration?: number;
+  notes: string[];
 };

@@ -6,6 +6,7 @@ export const {
   setTimeLogsError,
   addTimeLog,
   clearCurrentTimeLog,
+  addCommentToTimeLog,
 } = TimeLogsSlice.actions;
 
 export const TimeLogsReducer = TimeLogsSlice.reducer;
